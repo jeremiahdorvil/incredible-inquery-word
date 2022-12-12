@@ -43,10 +43,10 @@ function generatePassword() {
 function options() {
   userChoice = [];
 
-  length = prompt("How many characters would you like for your custom password? (8-64 characters)");
+  length = prompt("How many characters would you like for your custom password? (8-128 characters)");
 
-  if(isNaN(length) || length < 8 || length > 64) {
-    alert("Character length must be a number between 8-64. Please try again.");
+  if(isNaN(length) || length < 8 || length > 128) {
+    alert("Character length must be a number between 8-128. Please try again.");
     return false;
   }
   if(confirm("Would you like to use numbers in your custom password?")) {
