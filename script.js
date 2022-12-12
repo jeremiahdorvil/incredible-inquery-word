@@ -19,11 +19,12 @@ var special_characters = ['~','!','@','#','$','%','^','&','*','(',')','_','-','[
 // Write password to the #password input
 function writePassword() {
   var allPrompts = options();
+  console.log(allPrompts)
   var passwordText = document.querySelector("#password");
 
   if(allPrompts) {
   var password = generatePassword();
-  passwordText.value = password;
+   passwordText.value = password;
   } else{
     passwordText.value = "";
   }
@@ -50,16 +51,16 @@ function options() {
     return false;
   }
   if(confirm("Would you like to use numbers in your custom password?")) {
-    userChoice = userChoice + numbers;
+    userChoice = userChoice.concat(numbers);
   }
   if(confirm("Would you like to use lower case letters in your custom password?")) {
-    userChoice = userChoice + lowercaseLetters;
+    userChoice = userChoice.concat(lowercaseLetters);
   }
   if(confirm("Would you like to use upper case letters in your custom password?")) {
-    userChoice = userChoice + uppercaseLetters;
+    userChoice = userChoice.concat(uppercaseLetters);
   }
   if(confirm("Would you like to use special characters in your custom password?")) {
-    userChoice = userChoice + special_characters;
+    userChoice = userChoice.concat(special_characters);
   } 
   return true;
 }
